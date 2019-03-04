@@ -7,7 +7,6 @@ from blog.models import Post
 class PostModelTest(TestCase):
     @classmethod
     def setUpTestData(cls):
-        # Set up non-modified objects used by all test methods
         Post.objects.create(title='Big', slug='unique-unique')
 
     def test_title_label(self):
@@ -23,9 +22,4 @@ class PostModelTest(TestCase):
     def test_title_max_length(self):
         post = Post.objects.get(id=1)
         max_length = post._meta.get_field('title').max_length
-        self.assertEquals(max_length, 100)
-
-    def test_get_absolute_url(self):
-        post = Post.objects.get(id=1)
-        # This will also fail if the urlconf is not defined.
-        self.assertEquals(post.get_absolute_url(), '/catalog/author/1')
+        self.assertEquals(max_length, 250)
