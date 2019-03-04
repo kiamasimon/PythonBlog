@@ -1,0 +1,25 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en" xmlns:blog="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "css/bootstrap.min.css" %}">
+</head>
+<body>
+  <div class="container">
+      <div class="row">
+          <div class="col-md-8">
+              {% block content %}
+
+              {% endblock %}
+          </div>
+          <div class="col-md-4">
+              <h3 class="page-header">Muvalab Blog</h3>
+              <p><a href="{% url "blog:post_feed" %}" target="_blank">Subscribe to RSS Feed</a></p>
+          </div>
+      <div id="fb-root"></div>
+<script async defer src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v3.2"></script>
+  </div>
+</body>
+</html>
