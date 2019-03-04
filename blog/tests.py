@@ -7,7 +7,7 @@ from blog.models import Post
 class PostModelTest(TestCase):
     @classmethod
     def setUpTestData(cls):
-        Post.objects.create(title='Big', slug='unique-unique')
+        Post.objects.create(title='Big', slug='unique-unique', author_id='1')
 
     def test_title_label(self):
         post = Post.objects.get(id=1)
