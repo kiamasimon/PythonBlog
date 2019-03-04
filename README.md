@@ -27,3 +27,5 @@ For this project to function as intended, you must having the following installe
 #### Authors
 
 Simon Kiama Irungu
+
+[![Build Status](https://travis-ci.com/rickrickysimpsoms/PythonBlog.svg?branch=master)](https://travis-ci.com/rickrickysimpsoms/PythonBlog)
